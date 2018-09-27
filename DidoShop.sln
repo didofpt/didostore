@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DidoStore.Common", "DidoStore.Common\DidoStore.Common.csproj", "{8BD8ACDA-12A5-4028-B136-7978D5618D22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DidoStore.Model", "DidoStore.Model\DidoStore.Model.csproj", "{F355429F-B276-4AB0-8667-E3809A4DAD0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DidoStore.Data", "DidoStore.Data\DidoStore.Data.csproj", "{B91405BF-7F86-4FD4-8F8C-257BDD2295B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DidoStore.Service", "DidoStore.Service\DidoStore.Service.csproj", "{65E59DB0-1B7E-4947-A08E-FBA67DC8DE22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DidoStore.UnitTest", "DidoStore.UnitTest\DidoStore.UnitTest.csproj", "{4AF0DE4C-EA39-44AE-AB80-97B5FC7CE96D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DidoStore.Web", "DidoStore.Web\DidoStore.Web.csproj", "{D31AEC82-F99F-49CB-AFE6-662B9A46D57E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BD8ACDA-12A5-4028-B136-7978D5618D22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BD8ACDA-12A5-4028-B136-7978D5618D22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BD8ACDA-12A5-4028-B136-7978D5618D22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BD8ACDA-12A5-4028-B136-7978D5618D22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F355429F-B276-4AB0-8667-E3809A4DAD0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F355429F-B276-4AB0-8667-E3809A4DAD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F355429F-B276-4AB0-8667-E3809A4DAD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F355429F-B276-4AB0-8667-E3809A4DAD0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B91405BF-7F86-4FD4-8F8C-257BDD2295B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B91405BF-7F86-4FD4-8F8C-257BDD2295B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B91405BF-7F86-4FD4-8F8C-257BDD2295B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B91405BF-7F86-4FD4-8F8C-257BDD2295B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65E59DB0-1B7E-4947-A08E-FBA67DC8DE22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E59DB0-1B7E-4947-A08E-FBA67DC8DE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E59DB0-1B7E-4947-A08E-FBA67DC8DE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E59DB0-1B7E-4947-A08E-FBA67DC8DE22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AF0DE4C-EA39-44AE-AB80-97B5FC7CE96D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AF0DE4C-EA39-44AE-AB80-97B5FC7CE96D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AF0DE4C-EA39-44AE-AB80-97B5FC7CE96D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AF0DE4C-EA39-44AE-AB80-97B5FC7CE96D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D31AEC82-F99F-49CB-AFE6-662B9A46D57E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D31AEC82-F99F-49CB-AFE6-662B9A46D57E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D31AEC82-F99F-49CB-AFE6-662B9A46D57E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D31AEC82-F99F-49CB-AFE6-662B9A46D57E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98F9E308-839C-451E-B5C0-EFA1F5D8C6B2}
+	EndGlobalSection
+EndGlobal
