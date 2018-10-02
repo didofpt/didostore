@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using DidoStore.Model.Models;
 
-namespace DidoStore.Model
+namespace DidoStore.Model.Models
 {
 
     [Table("Orders")]
