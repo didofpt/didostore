@@ -46,8 +46,11 @@ namespace DidoStore.Model.Models
 
         public int? Quantity { set; get; }
 
+
+        [MaxLength(100)]
         public string CreatedBy { set; get; }
 
+        [MaxLength(100)]
         public string UpdatedBy { set; get; }
 
         public int? Warranty { set; get; }

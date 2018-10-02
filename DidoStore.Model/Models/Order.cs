@@ -31,11 +31,12 @@ namespace DidoStore.Model.Models
         [MaxLength(250)]
         public string PaymentMethod { set; get; }
 
-        public DateTime CreatedDate { set; get; }
 
-        public bool PaymentStatus { set; get; }
+        public DateTime? CreatedDate { set; get; }
 
-        public bool Status { set; get; }
+        public bool? PaymentStatus { set; get; }
+
+        public bool? Status { set; get; }
 
         public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
 
