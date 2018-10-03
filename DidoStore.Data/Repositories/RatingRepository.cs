@@ -3,7 +3,7 @@ using DidoStore.Model.Models;
 
 namespace DidoStore.Data.Repositories
 {
-    public interface IRatingRepository
+    public interface IRatingRepository : IRepository<Rating>
     {
 
     }

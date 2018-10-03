@@ -4,7 +4,7 @@ using DidoStore.Model.Models;
 namespace DidoStore.Data.Repositories
 {
 
-    public interface IOrderRepository
+    public interface IOrderRepository : IRepository<Order>
     {
 
     }

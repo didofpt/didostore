@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DidoStore.Data.Repositories
 {
-    public interface IBranchRepository
+    public interface IBranchRepository : IRepository<Branch>
     {
         IEnumerable<Branch> GetByAlias(string alias);
     }

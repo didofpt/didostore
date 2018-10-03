@@ -4,7 +4,7 @@ using DidoStore.Model.Models;
 namespace DidoStore.Data.Repositories
 {
 
-    public interface ICommentRepository
+    public interface ICommentRepository : IRepository<Comment>
     {
 
     }
