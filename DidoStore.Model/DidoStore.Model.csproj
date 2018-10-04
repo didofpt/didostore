@@ -51,6 +51,7 @@
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\CommentDetail.cs" />
+    <Compile Include="Models\Error.cs" />
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Order.cs" />

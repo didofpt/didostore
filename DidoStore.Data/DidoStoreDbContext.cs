@@ -22,6 +22,7 @@ namespace DidoStore.Data
         public DbSet<OrderDetail> OrderDetails { set; get; }
         public DbSet<Product> Products { set; get; }
         public DbSet<Rating> Ratings { set; get; }
+        public DbSet<Error> Errors { set; get; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
