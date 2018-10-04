@@ -91,12 +91,14 @@ namespace DidoStore.Data.Infrastructure
             return dataContext.Set<T>().AsQueryable();
         }
 
-        public T GetSingleByCondition(Expression<Func<T, bool>> expression, string[] includes = null)
+        public T GetSingleByCondition(
+            Expression<Func<T, bool>> expression, string[] includes = null)
         {
             return GetAll(includes).FirstOrDefault(expression);
         }
 
-        public virtual IQueryable<T> GetMulti(Expression<Func<T, bool>> predicate, string[] includes = null)
+        public virtual IQueryable<T> GetMulti(
+            Expression<Func<T, bool>> predicate, string[] includes = null)
         {
             //HANDLE INCLUDES FOR ASSOCIATED OBJECTS IF APPLICABLE
             if(includes != null && includes.Count() > 0)
@@ -110,7 +112,8 @@ namespace DidoStore.Data.Infrastructure
             return dataContext.Set<T>().Where<T>(predicate).AsQueryable<T>();
         }
 
-        public virtual IQueryable<T> GetMultiPaging(Expression<Func<T, bool>> predicate, out int total, int index = 0, int size = 20, string[] includes = null)
+        public virtual IQueryable<T> GetMultiPaging(
+            Expression<Func<T, bool>> predicate, out int total, int index = 0, int size = 20, string[] includes = null)
         {
             int skipCount = index * size;
             IQueryable<T> _resetSet;

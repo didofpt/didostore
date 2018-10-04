@@ -26,8 +26,8 @@ namespace DidoStore.Model.Models
 
         public bool Status { set; get; }
 
-
-        public int ParentId { set; get; }
+        
+        public int? ParentId { set; get; }
 
         [ForeignKey("CommentId")]
         public virtual Comment Comment { set; get; }

@@ -13,6 +13,7 @@ namespace DidoStore.Service
         void Delete(int id);
         IEnumerable<Product> GetAll();
         IEnumerable<Product> GetAllPaging(int page, int pageSize, out int totalRow);
+        IEnumerable<Product> GetAllByBranchPaging(int branchId, int pageIndex, int pageSize, out int totalRow);
         Product GetById(int id);
         void SaveChanges();
     }
@@ -50,18 +51,10 @@ namespace DidoStore.Service
             return _productRepository.GetMultiPaging(x => x.Status, out totalRow, page, pageSize);
         }
 
-        /// <summary>
-        /// TODO: get all product and paging them by branch
-        /// </summary>
-        /// <param name="brarch"></param>
-        /// <param name="page"></param>
-        /// <param name="pageSize"></param>
-        /// <param name="totalRow"></param>
-        /// <returns></returns>
-        //public IEnumerable<Product> GetAllPagingByBranch(string brarch ,int page, int pageSize, out int totalRow)
-        //{
-        //    return _productRepository.GetMultiPaging(x => x.Status, out totalRow, page, pageSize);
-        //}
+        public IEnumerable<Product> GetAllByBranchPaging(int branchId, int pageIndex, int pageSize, out int totalRow)
+        {
+            return _productRepository.GetAllByBranch(branchId, pageIndex, pageSize, out totalRow);
+        }
 
         public Product GetById(int id)
         {
