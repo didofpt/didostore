@@ -3,7 +3,7 @@
     public class DbFactory : Disposable, IDbFactory
     {
 
-        DidoStoreDbContext dbContext;
+        private DidoStoreDbContext dbContext;
 
         public DidoStoreDbContext Init()
         {
