@@ -1,7 +1,6 @@
 ﻿using DidoStore.Model.Models;
 using DidoStore.Service;
 using DidoStore.Web.Infrastructure.Core;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -17,9 +16,9 @@ namespace DidoStore.Web.Api
         public ProductController(IErrorService errorService, IProductService productService)
             : base(errorService)
         {
-
+            this._productService = productService;
         }
-        
+
 
 
         public HttpResponseMessage Post(HttpRequestMessage request, Product product)
@@ -87,18 +86,11 @@ namespace DidoStore.Web.Api
         {
             return CreateHttpResponse(request, () =>
             {
-                HttpResponseMessage response = null;
-                if(ModelState.IsValid)
-                {
-                    request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
-                {
-                    var listProduct = _productService.GetAll();
-                    _productService.SaveChanges();
+                var listProduct = _productService.GetAll();
+                _productService.SaveChanges();
 
-                    response = request.CreateResponse(HttpStatusCode.OK, listProduct);
-                }
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listProduct);
+
                 return response;
             });
         }

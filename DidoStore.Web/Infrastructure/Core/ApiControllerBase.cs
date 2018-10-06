@@ -19,7 +19,7 @@ namespace DidoStore.Web.Infrastructure.Core
             this._errorService = errorService;
         }
 
-
+            
         protected HttpResponseMessage CreateHttpResponse(HttpRequestMessage requestMessage, Func<HttpResponseMessage> function)
         {
             HttpResponseMessage response = null;
