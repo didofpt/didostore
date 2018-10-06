@@ -8,7 +8,7 @@ namespace DidoStore.Service
 
     public interface IProductService
     {
-        void Add(Product product);
+        Product Add(Product product);
         void Update(Product product);
         void Delete(int id);
         IEnumerable<Product> GetAll();
@@ -31,9 +31,9 @@ namespace DidoStore.Service
             _unitOfWork = unitOfWork;
         }
 
-        public void Add(Product product)
+        public Product Add(Product product)
         {
-            _productRepository.Add(product);
+          return  _productRepository.Add(product);
         }
 
         public void Delete(int id)

@@ -1,36 +1,108 @@
-﻿using DidoStore.Web.Infrastructure.Core;
+﻿using DidoStore.Model.Models;
+using DidoStore.Service;
+using DidoStore.Web.Infrastructure.Core;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 
 namespace DidoStore.Web.Api
 {
+    [RoutePrefix("api/product")]
     public class ProductController : ApiControllerBase
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+
+        IProductService _productService;
+
+        public ProductController(IErrorService errorService, IProductService productService)
+            : base(errorService)
         {
-            return new string[] { "value1", "value2" };
+
+        }
+        
+
+
+        public HttpResponseMessage Post(HttpRequestMessage request, Product product)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if(ModelState.IsValid)
+                {
+                    request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var newProduct = _productService.Add(product);
+                    _productService.SaveChanges();
+
+                    response = request.CreateResponse(HttpStatusCode.Created, newProduct);
+                }
+                return response;
+            });
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        public HttpResponseMessage Put(HttpRequestMessage request, Product product)
         {
-            return "value";
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if(ModelState.IsValid)
+                {
+                    request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    _productService.Update(product);
+                    _productService.SaveChanges();
+
+                    response = request.CreateResponse(HttpStatusCode.OK);
+                }
+                return response;
+            });
         }
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if(ModelState.IsValid)
+                {
+                    request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    _productService.Delete(id);
+                    _productService.SaveChanges();
+
+                    response = request.CreateResponse(HttpStatusCode.OK);
+                }
+                return response;
+            });
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        [Route("getall")]
+        public HttpResponseMessage Get(HttpRequestMessage request)
         {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if(ModelState.IsValid)
+                {
+                    request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var listProduct = _productService.GetAll();
+                    _productService.SaveChanges();
+
+                    response = request.CreateResponse(HttpStatusCode.OK, listProduct);
+                }
+                return response;
+            });
         }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
+
     }
 }
