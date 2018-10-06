@@ -88,7 +88,7 @@ namespace DidoStore.Data.Infrastructure
                 return query.AsQueryable();
             }
 
-            return dataContext.Set<T>().AsQueryable();
+            return dataContext.Set<T>().AsQueryable().ToList() ;
         }
 
         public T GetSingleByCondition(

@@ -8,6 +8,7 @@ using DidoStore.Data;
 using DidoStore.Data.Infrastructure;
 using DidoStore.Data.Repositories;
 using DidoStore.Service;
+using DidoStore.Web.Mappings;
 using Microsoft.Owin;
 using Owin;
 
@@ -20,6 +21,8 @@ namespace DidoStore.Web.App_Start
         public void Configuration(IAppBuilder app)
         {
             ConfigAutofac(app);
+            //AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile<AutoMapperConfiguration>());
+
         }
 
         private void ConfigAutofac(IAppBuilder app)
