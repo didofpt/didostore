@@ -1,9 +1,10 @@
 ﻿using DidoStore.Model.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 
 namespace DidoStore.Data
 {
-    public class DidoStoreDbContext : DbContext
+    public class DidoStoreDbContext : IdentityDbContext<ApplicationUser>
     {
         public DidoStoreDbContext() : base("DidoStoreConnection")
         {
@@ -19,9 +20,15 @@ namespace DidoStore.Data
         public DbSet<Rating> Ratings { set; get; }
         public DbSet<Error> Errors { set; get; }
 
+        public static DidoStoreDbContext Create()
+        {
+            return new DidoStoreDbContext();
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
+            modelBuilder.Entity<IdentityUserRole>().HasKey(i => new {i.UserId, i.RoleId });
+            modelBuilder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
         }
     }
 }
